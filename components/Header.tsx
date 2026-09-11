@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Sparkles, Bookmark, Key, Layers, Cpu, Database, Check } from 'lucide-react';
 import { getSavedQuestionSets, getBookmarkedQuestions } from '@/lib/storage';
 
@@ -61,9 +62,16 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand / Logo */}
         <div className="flex items-center gap-3">
-          <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-[1px] shadow-lg shadow-indigo-500/20">
-            <div className="w-full h-full bg-[#0d1017] rounded-[11px] flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-indigo-400 animate-pulse" />
+          <div className="relative flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 p-[2px] shadow-lg shadow-indigo-500/25 ring-1 ring-white/10 hover:shadow-indigo-500/40 transition-all duration-300">
+            <div className="w-full h-full rounded-full overflow-hidden bg-[#0d1017] relative">
+              <Image
+                src="/logo.jpg"
+                alt="QuestAI Logo"
+                width={40}
+                height={40}
+                className="w-full h-full object-cover object-center"
+                priority
+              />
             </div>
           </div>
           <div>
